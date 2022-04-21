@@ -21,5 +21,14 @@ class MathController < ApplicationController
     render({:template => "math_templates/subtraction_form.html.erb"})
   end
 
+  def multiplication
+    @first = params.fetch("first_num").to_f
+    @second = params.fetch("second_num").to_f
+    @result = @first * @second
+    render({:template => "math_templates/multiply_results.html.erb"})
+  end
 
+  def multiply_form
+    render({:template => "math_templates/multiply_form.html.erb"})
+  end
 end
